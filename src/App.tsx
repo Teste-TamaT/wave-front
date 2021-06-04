@@ -1,13 +1,13 @@
 import React from 'react'
 import './styles/App.css'
+import { Switch, Route } from 'react-router-dom'
+import Home from './pages/Home'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Welcome to WAVE</p>
-      </header>
-    </div>
+    <Switch>
+      <Route path="/" component={ Home } />
+    </Switch>
   )
 }
 
