@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
-import { makeStyles } from '@material-ui/core'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Drawer from '@material-ui/core/Drawer'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle'
-import Container from '@material-ui/core/Container'
-import PieChartIcon from '@material-ui/icons/PieChart'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
+import React, { useState } from "react";
+import { MenuIcon, AccountCircleIcon, PieChartIcon } from "@material-ui/icons";
+import {
+  AppBar,
+  Toolbar,
+  Drawer,
+  List,
+  ListItem,
+  Typography,
+  IconButton,
+  Container,
+  ListItemIcon,
+  ListItemText,
+} from "@material-ui/core";
+
 
 const useStyles = makeStyles((theme) => ({
   menuContainer: {
