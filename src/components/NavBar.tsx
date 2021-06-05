@@ -33,7 +33,7 @@ export default function NavBar() {
 
   const list = () => (
     <List>
-      <ListItem button key='Portfolio'>
+      <ListItem button key='Portfolio' disabled>
         <ListItemIcon>
           <PieChartIcon />
         </ListItemIcon>
@@ -60,7 +60,7 @@ export default function NavBar() {
         >
           {list()}
         </Drawer>
-        <IconButton className={classes.profileButton} disabled>
+        <IconButton className={classes.profileButton}>
           <AccountCircleIcon color="secondary" />
         </IconButton>
       </Toolbar>
