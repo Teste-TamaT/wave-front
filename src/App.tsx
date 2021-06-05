@@ -3,6 +3,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import './styles/App.css'
 import { Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
+import Portfolio from './pages/Portfolio'
 
 const theme = createMuiTheme({
   palette: {
@@ -28,6 +29,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Switch>
+        <Route path="/portfolio" component={Portfolio} />
         <Route path="/" component={Home} />
       </Switch>
     </ThemeProvider>

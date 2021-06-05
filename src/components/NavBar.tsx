@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { MenuIcon, AccountCircleIcon, PieChartIcon } from "@material-ui/icons";
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import {
   AppBar,
   Toolbar,
@@ -11,10 +11,13 @@ import {
   Container,
   ListItemIcon,
   ListItemText,
-} from "@material-ui/core";
+  makeStyles,
+} from '@material-ui/core'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle'
+import MenuIcon from '@material-ui/icons/Menu'
+import PieChartIcon from '@material-ui/icons/PieChart'
 
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   menuContainer: {
     display: 'flex',
     justifyContent: 'flex-start',
@@ -27,24 +30,36 @@ const useStyles = makeStyles((theme) => ({
   },
 
   title: {
-    marginLeft: 24
-  }
+    marginLeft: 24,
+  },
 }))
 
 export default function NavBar() {
   const [useDrawerState, setDrawerState] = useState(false)
+  const history = useHistory()
   const classes = useStyles()
 
-  const list = () => (
+  const handleItemsClick = (path: string) => {
+    history.push(path)
+    setDrawerState(false)
+  }
+
+  const menuItems = [
+    {
+      text: 'Portfólio',
+      icon: <PieChartIcon />,
+      path: '/portfolio',
+    },
+  ]
+
+  const itemsList = () => (
     <List>
-      <ListItem button key='Portfolio' disabled>
-        <ListItemIcon>
-          <PieChartIcon />
-        </ListItemIcon>
-        <ListItemText>
-          Portfólio
-        </ListItemText>
-      </ListItem>
+      {menuItems.map(({ path, icon, text }) => (
+        <ListItem key={path} button onClick={() => handleItemsClick(path)}>
+          <ListItemIcon>{icon}</ListItemIcon>
+          <ListItemText primary={text} />
+        </ListItem>
+      ))}
     </List>
   )
 
@@ -55,14 +70,16 @@ export default function NavBar() {
           <IconButton>
             <MenuIcon color="secondary" onClick={() => setDrawerState(true)} />
           </IconButton>
-          <Typography className={ classes.title } variant="inherit">WAVE</Typography>
+          <Typography className={classes.title} variant="inherit">
+            WAVE
+          </Typography>
         </Container>
         <Drawer
           anchor={'left'}
           open={useDrawerState}
           onClose={() => setDrawerState(false)}
         >
-          {list()}
+          { itemsList() }
         </Drawer>
         <IconButton className={classes.profileButton}>
           <AccountCircleIcon color="secondary" />
