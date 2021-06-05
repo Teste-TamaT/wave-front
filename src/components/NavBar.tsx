@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
   profileButton: {
     marginRight: 0,
   },
+
+  title: {
+    marginLeft: 24
+  }
 }))
 
 export default function NavBar() {
@@ -51,7 +55,7 @@ export default function NavBar() {
           <IconButton>
             <MenuIcon color="secondary" onClick={() => setDrawerState(true)} />
           </IconButton>
-          <Typography variant="inherit">WAVE</Typography>
+          <Typography className={ classes.title } variant="inherit">WAVE</Typography>
         </Container>
         <Drawer
           anchor={'left'}

@@ -9,20 +9,30 @@ const theme = createMuiTheme({
     primary: {
       // light: ,
       main: '#284D7A',
-      // dark: 
+      // dark:
     },
 
     secondary: {
       // light: ,
       main: '#20B8AA',
       // dark: ,
+    },
+
+    success: {
+      // light: ,
+      main: '#56F0B9',
+      // dark: ,
+    },
+
+    text: {
+      secondary: '#E9EBED'
     }
-  }, 
+  },
 })
 
 function App() {
   return (
-    <ThemeProvider theme={ theme }>
+    <ThemeProvider theme={theme}>
       <Switch>
         <Route path="/" component={Home} />
       </Switch>
