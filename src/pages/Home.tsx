@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 
-function Home() {
+export default function Home() {
   return(
     <div className="App">
     <header className="App-header">
@@ -10,5 +10,3 @@ function Home() {
   </div>
   );
 }
-
-export default Home
