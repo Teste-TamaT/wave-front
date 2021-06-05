@@ -7,21 +7,15 @@ import Home from './pages/Home'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      // light: ,
       main: '#284D7A',
-      // dark:
     },
 
     secondary: {
-      // light: ,
       main: '#20B8AA',
-      // dark: ,
     },
 
     success: {
-      // light: ,
       main: '#56F0B9',
-      // dark: ,
     },
 
     text: {
