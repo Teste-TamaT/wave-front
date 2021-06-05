@@ -49,13 +49,14 @@ export default function NavBar() {
       text: 'Portfólio',
       icon: <PieChartIcon />,
       path: '/portfolio',
+      isDisabled: true
     },
   ]
 
   const itemsList = () => (
     <List>
-      {menuItems.map(({ path, icon, text }) => (
-        <ListItem key={path} button onClick={() => handleItemsClick(path)}>
+      {menuItems.map(({ path, icon, text, isDisabled }) => (
+        <ListItem key={path} button onClick={() => handleItemsClick(path)} disabled={ isDisabled }>
           <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText primary={text} />
         </ListItem>
